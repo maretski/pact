@@ -22,7 +22,7 @@ describe('API Service', () => {
                         method: 'GET',
                         path: '/activity',
                         query: {
-                            participants: '1',
+                            participants: '2',
                         },
                         headers: { Accept: "application/json, text/plain, */*" },
                     },
@@ -31,7 +31,7 @@ describe('API Service', () => {
                         headers: { "Content-Type": "application/json; charset=utf-8" },
                         body: like(
                             {
-                                participants: 1,
+                                participants: 2,
                             }
                         ),
                     }
@@ -41,9 +41,9 @@ describe('API Service', () => {
 
     describe('test', () => {
         test('should return correct data', async () => {
-            const res = await axios.get(`${provider.mockService.baseUrl}/activity?participants=1`)
+            const res = await axios.get(`${provider.mockService.baseUrl}/activity?participants=2`)
             expect(res.status).toEqual(200);
-            expect(res.data.participants).toEqual(1);
+            expect(res.data.participants).toEqual(2);
         })
 
         afterEach(async () => provider.verify())

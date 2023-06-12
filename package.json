@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test:consumer": "jest consumer/consumer.spec.js --testTimeout=20000 --runInBand --detectOpenHandles",
-    "pact:publish": "pact-broker publish ./pacts --consumer-app-version=1.0 --auto-detect-version-properties --broker-base-url=http://localhost:9292"
+    "test:provider": "jest provider/provider.spec.js --testTimeout=20000 --runInBand --detectOpenHandles",
+    "pact:publish": "pact-broker publish ./pacts --consumer-app-version=0.0.1 --auto-detect-version-properties --broker-base-url=http://localhost:9292",
+    "test": "npm run test:consumer && npm run pact:publish && npm run test:provider"
   },
   "keywords": [],
   "author": "",
