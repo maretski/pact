@@ -11,7 +11,7 @@
       "request": {
         "method": "GET",
         "path": "/activity",
-        "query": "participants=1",
+        "query": "participants=2",
         "headers": {
           "Accept": "application/json, text/plain, */*"
         }
@@ -22,7 +22,7 @@
           "Content-Type": "application/json; charset=utf-8"
         },
         "body": {
-          "participants": 1
+          "participants": 2
         },
         "matchingRules": {
           "$.body": {
